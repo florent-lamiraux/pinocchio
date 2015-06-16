@@ -27,7 +27,7 @@
 #define BOOST_TEST_MODULE tspatialTest
 #include <boost/test/unit_test.hpp>
 #include <boost/utility/binary.hpp>
-#include "pinocchio/tools/matrix-comparison.hpp"
+// #include "pinocchio/tools/matrix-comparison.hpp"
 
 
 BOOST_AUTO_TEST_SUITE ( tspatialTest)

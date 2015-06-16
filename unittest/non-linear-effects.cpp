@@ -35,7 +35,7 @@
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE NLETests
 #include <boost/test/unit_test.hpp>
-#include "pinocchio/tools/matrix-comparison.hpp"
+// #include "pinocchio/tools/matrix-comparison.hpp"
 
 #include <iostream>
 

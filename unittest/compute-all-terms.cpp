@@ -37,7 +37,7 @@
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE CATTests
 #include <boost/test/unit_test.hpp>
-#include "pinocchio/tools/matrix-comparison.hpp"
+// #include "pinocchio/tools/matrix-comparison.hpp"
 
 #include <iostream>
 

@@ -45,7 +45,7 @@
 #define BOOST_TEST_MODULE symmetricTest
 #include <boost/test/unit_test.hpp>
 #include <boost/utility/binary.hpp>
-#include "pinocchio/tools/matrix-comparison.hpp"
+// #include "pinocchio/tools/matrix-comparison.hpp"
 
 
 #include <Eigen/StdVector>

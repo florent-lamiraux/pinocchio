@@ -37,7 +37,7 @@
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE CholeskyTest
 #include <boost/test/unit_test.hpp>
-#include "pinocchio/tools/matrix-comparison.hpp"
+// #include "pinocchio/tools/matrix-comparison.hpp"
 #include <boost/utility/binary.hpp>
 
 

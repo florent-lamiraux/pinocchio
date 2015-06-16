@@ -39,7 +39,7 @@
 #define BOOST_TEST_DYN_LINK
 #define BOOST_TEST_MODULE ValueTest
 #include <boost/test/unit_test.hpp>
-#include "pinocchio/tools/matrix-comparison.hpp"
+// #include "pinocchio/tools/matrix-comparison.hpp"
 
 
 BOOST_AUTO_TEST_SUITE ( RneaRevoluteJoints )
