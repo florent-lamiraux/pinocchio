@@ -106,6 +106,13 @@ namespace se3
         res[i] = lower_pos_limit[i] + (( upper_pos_limit[i] - lower_pos_limit[i]) * rand())/RAND_MAX;
       }
     }
+
+    template <class Other>
+    bool isEqual_impl (const Other&) const
+    {
+      return true;
+    }
+
   private:
     Index size_;
   }; // struct VectorSpaceOperation

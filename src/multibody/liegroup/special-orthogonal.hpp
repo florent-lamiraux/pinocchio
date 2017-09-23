@@ -150,6 +150,11 @@ namespace se3
     {
       random_impl(qout);
     }
+    template <class Other>
+    bool isEqual_impl (const Other&) const
+    {
+      return true;
+    }
   }; // struct SpecialOrthogonalOperation<2>
 
   template<>
@@ -254,6 +259,13 @@ namespace se3
 
       return defineSameRotation(quat1,quat2,prec);
     }
+
+    template <class Other>
+    bool isEqual_impl (const Other&) const
+    {
+      return true;
+    }
+
   }; // struct SpecialOrthogonalOperation<3>
 } // namespace se3
 

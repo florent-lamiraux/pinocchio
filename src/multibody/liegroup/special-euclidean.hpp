@@ -182,6 +182,14 @@ namespace se3
       return R2crossSO2_t::isSameConfiguration(q0, q1, prec);
     }
 
+    template <class Other>
+    bool isEqual_impl (const Other&) const
+    {
+      return true;
+    }
+
+
+
     private:
     template<typename V>
     static void forwardKinematics(SE3 & M, const Eigen::MatrixBase<V>& q)
@@ -293,6 +301,13 @@ namespace se3
     {
       return R3crossSO3_t::isSameConfiguration(q0, q1, prec);
     }
+
+    template <class Other>
+    bool isEqual_impl (const Other&) const
+    {
+      return true;
+    }
+
   }; // struct SpecialEuclideanOperation<3>
 
 } // namespace se3

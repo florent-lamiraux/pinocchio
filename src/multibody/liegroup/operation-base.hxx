@@ -136,6 +136,21 @@ namespace se3 {
     return Derived::isSameConfiguration_impl(q0, q1, prec);
   }
 
+  template <class Derived>
+  template <class Other>
+  bool LieGroupOperationBase<Derived>::operator== (const Other& other) const
+  {
+    return derived ().isEqual_impl (other);
+  }
+
+  template <class Derived>
+  template <class Other>
+  bool LieGroupOperationBase<Derived>::operator!= (const Other& other) const
+  {
+    return !derived ().isEqual_impl (other);
+  }
+
+
   // ----------------- API that allocates memory ---------------------------- //
 
 
@@ -227,6 +242,21 @@ namespace se3 {
       const Scalar & prec)
   {
     return q0.isApprox(q1, prec);
+  }
+
+  template <class Derived>
+  template <class Other>
+  bool LieGroupOperationBase<Derived>::isEqual_impl (const Other&) const
+  {
+    return false;
+  }
+
+  template <class Derived>
+  template <class Other>
+  bool LieGroupOperationBase<Derived>::isDifferent_impl (const Other& other)
+    const
+  {
+    return !isEqual_impl (other);
   }
 
   template <class Derived>

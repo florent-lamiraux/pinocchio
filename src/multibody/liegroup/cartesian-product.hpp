@@ -114,7 +114,19 @@ namespace se3
       return LieGroup1::isSameConfiguration(q0.template head<LieGroup1::NQ>(), q1.template head<LieGroup1::NQ>(), prec)
         +    LieGroup2::isSameConfiguration(q0.template tail<LieGroup2::NQ>(), q1.template tail<LieGroup2::NQ>(), prec);
     }
+
   }; // struct CartesianProductOperation
+
+  template <>
+  template<typename LieGroup1, typename LieGroup2>
+  bool CartesianProductOperation <LieGroup1, LieGroup2>::isEqual_impl
+  <CartesianProductOperation <typename D1, typename D2> >
+  (const CartesianProductOperation <typename D1, typename D2>& other) const
+  {
+    return
+      (LieGroup1::derived ().isEqual_impl (other.D1.derived ()) &&
+       Liegroup2::derived ().isEqual_impl (other.D2.derived ()));
+  }
 
 } // namespace se3
 

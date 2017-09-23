@@ -130,4 +130,35 @@ BOOST_AUTO_TEST_CASE ( test_vector_space )
   BOOST_CHECK_MESSAGE(error, "Random configuration between infinite bounds should return an error");
 }
 
+BOOST_AUTO_TEST_CASE ( test_equality )
+{
+  BOOST_CHECK (SpecialEuclideanOperation <2> () ==
+               SpecialEuclideanOperation <2> ());
+  BOOST_CHECK (SpecialEuclideanOperation <3> () ==
+               SpecialEuclideanOperation <3> ());
+  BOOST_CHECK (SpecialOrthogonalOperation <2> () ==
+               SpecialOrthogonalOperation <2> ());
+  BOOST_CHECK (SpecialOrthogonalOperation <3> () ==
+               SpecialOrthogonalOperation <3> ());
+  BOOST_CHECK (VectorSpaceOperation <2> () ==
+               VectorSpaceOperation <2> ());
+  BOOST_CHECK (VectorSpaceOperation <3> () ==
+               VectorSpaceOperation <3> ());
+  BOOST_CHECK (VectorSpaceOperation <Eigen::Dynamic> (4) ==
+               VectorSpaceOperation <Eigen::Dynamic> (4));
+
+  BOOST_CHECK (VectorSpaceOperation <3> () ==
+               VectorSpaceOperation <Eigen::Dynamic> (3));
+
+  BOOST_CHECK (SpecialOrthogonalOperation <2> () !=
+               SpecialOrthogonalOperation <3> ());
+  BOOST_CHECK (SpecialOrthogonalOperation <2> () !=
+               VectorSpaceOperation <3> ());
+  BOOST_CHECK (SpecialOrthogonalOperation <3> () !=
+               VectorSpaceOperation <3> ());
+  BOOST_CHECK (SpecialOrthogonalOperation <3> () !=
+               VectorSpaceOperation <Eigen::Dynamic> (3));
+
+}
+
 BOOST_AUTO_TEST_SUITE_END ()

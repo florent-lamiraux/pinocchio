@@ -193,6 +193,12 @@ namespace se3
                                     const Scalar & prec = Eigen::NumTraits<Scalar>::dummy_precision());
     /// \}
 
+    template <class Other>
+    bool operator== (const Other& other) const;
+
+    template <class Other>
+    bool operator!= (const Other& other) const;
+
     /// \name API that allocates memory
     /// \{
 
@@ -235,6 +241,13 @@ namespace se3
     static bool isSameConfiguration_impl(const Eigen::MatrixBase<ConfigL_t> & q0,
                                          const Eigen::MatrixBase<ConfigR_t> & q1,
                                          const Scalar & prec);
+
+    template <class Other>
+    bool isEqual_impl (const Other& other) const;
+
+    template <class Other>
+    bool isDifferent_impl (const Other& other) const;
+
     /// Get dimension of Lie Group vector representation
     ///
     /// For instance, for SO(3), the dimension of the vector representation is
